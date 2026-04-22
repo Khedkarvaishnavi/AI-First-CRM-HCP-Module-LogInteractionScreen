@@ -1,34 +1,3 @@
-# import requests
-
-# API_KEY = "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"
-
-# def call_groq(prompt):
-#     url = "https://api.groq.com/openai/v1/chat/completions"
-
-#     headers = {
-#         "Authorization": f"Bearer {API_KEY}",
-#         "Content-Type": "application/json"
-#     }
-
-#     data = {
-#         "model": "gemma2-9b-it",
-#         "messages": [
-#             {"role": "user", "content": prompt}
-#         ]
-#     }
-
-#     response = requests.post(url, headers=headers, json=data)
-#     return response.json()["choices"][0]["message"]["content"]
-
-
-
-
-
-
-
-
-
-
 
 
 

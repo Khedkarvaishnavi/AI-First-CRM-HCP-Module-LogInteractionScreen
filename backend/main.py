@@ -1,19 +1,3 @@
-# from fastapi import FastAPI
-# from pydantic import BaseModel
-# from ai_agent.graph import run_agent
-
-# app = FastAPI()
-
-# class ChatInput(BaseModel):
-#     message: str
-
-# @app.post("/chat-log")
-# def chat_log(input: ChatInput):
-#     result = run_agent(input.message)
-#     return result
-
-
-
 
 
 from fastapi import FastAPI
@@ -57,7 +41,7 @@ def chat_log(input: ChatInput):
         }
 
 
-# 🔷 OPTIONAL: Save Interaction API
+
 @app.post("/log-interaction")
 def save_interaction(data: dict):
     print("Saved Interaction:", data)
