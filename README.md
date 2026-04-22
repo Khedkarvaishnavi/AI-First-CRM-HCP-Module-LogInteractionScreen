@@ -4,90 +4,93 @@ An AI-powered Customer Relationship Management (CRM) module designed for Life Sc
 
 This system leverages LLMs + LangGraph to convert unstructured conversation into structured CRM data with sentiment analysis.
 
-# Features
-🔹 AI-Assisted Interaction Logging
-Users can describe interactions in natural language
-AI extracts:
-HCP Name
-Interaction Type
-Date & Time
-Topics Discussed
-Follow-up Actions
-Sentiment (Positive / Neutral / Negative)
-🔹 Dual Input Mode
-📋 Structured Form Input
-💬 Conversational AI Chat Interface
-🔹 Sentiment Analysis (AI-Based)
-Automatically detects sentiment using LLM
-Displays using radio buttons
-Editable by user
-🔹 Editable CRM Form
-AI auto-fills data
-Users can manually edit before saving
-🔹 LangGraph AI Agent
-Manages workflow of interaction processing
-Uses multiple tools for CRM intelligence
-🏗️ Tech Stack
-🔹 Frontend
-React.js
-Redux Toolkit (State Management)
-CSS (Custom Styling)
-Google Inter Font
-🔹 Backend
-FastAPI (Python)
-LangGraph (AI Agent Framework)
-Groq API (LLM Inference)
-Model: llama-3.3-70b-versatile
-🔹 Database (Planned / Optional)
-PostgreSQL / MySQL
-📁 Project Structure
-AI-CRM-HCP/
-│
-├── backend/
-│   ├── main.py
-│   ├── ai_agent/
-│   │   ├── graph.py
-│   │   ├── tools.py
-│   │   ├── groq_client.py
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── AIChat.jsx
-│   │   │   ├── InteractionForm.jsx
-│   │   ├── redux/
-│   │   │   ├── interactionSlice.js
-│   │   ├── styles.css
-│
-├── .env
-├── README.md
-⚙️ Installation & Setup
-🔹 1. Clone Repository
-git clone https://github.com/your-username/ai-crm-hcp.git
-cd ai-crm-hcp
-🔹 2. Backend Setup
-cd backend
-python -m venv venv
-venv\Scripts\activate   # Windows
-pip install -r requirements.txt
-🔹 3. Setup Environment Variables
 
-Create .env file inside backend/
+# Features
+
+#AI-Assisted Interaction Logging
+
+#AI extracts:
+
+1.HCP Name
+2.Interaction Type
+3.Date & Time
+4.Topics Discussed
+5.Follow-up Actions
+6.Sentiment (Positive / Neutral / Negative)
+
+
+
+#Sentiment Analysis (AI-Based)
+
+1.Automatically detects sentiment using LLM
+2.Displays using radio buttons
+3.Editable by user
+
+
+
+#Editable CRM Form
+
+1.AI auto-fills data
+2.Users can manually edit before saving
+
+
+#LangGraph AI Agent
+1.Manages workflow of interaction processing
+2.Uses multiple tools for CRM intelligence
+
+
+#Frontend
+1.React.js
+2.Redux Toolkit (State Management)
+3.CSS (Custom Styling)
+4.Google Inter Font
+
+
+
+#Backend
+1.FastAPI (Python)
+2.LangGraph (AI Agent Framework)
+3.Groq API (LLM Inference)
+4.Model: llama-3.3-70b-versatile
+
+
+
+#Database 
+PostgreSQL / MySQL
+
+
+#Installation & Setup
+
+1.cd backend 
+python -m venv venv 
+venv\Scripts\activate
+pip install -r requirements.txt
+
+
+
+#Create .env file inside backend/
 
 GROQ_API_KEY=your_api_key_here
-🔹 4. Run Backend
+
+
+Run Backend
 uvicorn main:app --reload
 
 👉 Open: http://127.0.0.1:8000/docs
 
-🔹 5. Frontend Setup
+
+
+2.Frontend Setup
 cd frontend
 npm install
 npm start
 
 👉 Open: http://localhost:3000
 
-🔄 Application Flow
+
+
+#Application Flow
+
 User Input (Chat)
         ↓
 FastAPI Endpoint (/chat-log)
@@ -101,25 +104,28 @@ Structured JSON Output
 Redux Store Update
         ↓
 Auto-filled Form UI
-🤖 LangGraph Agent Design
+
+
+
+#LangGraph Agent Design
 
 The LangGraph agent orchestrates the AI workflow by managing states and invoking tools.
 
-🔧 Tools Used:
+# Tools Used:
 Log Interaction Tool
-Extracts structured data from user input
-Performs sentiment analysis
+
 Edit Interaction Tool
-Updates previously captured interaction data
+
 Summarization Tool
-Generates concise interaction summary
+
 Sentiment Tool
-Classifies sentiment (Positive/Negative/Neutral)
+
 Follow-up Suggestion Tool
-Recommends next actions
-🧪 Example Input & Output
-📝 Input
+
+#Input
+
 Met Dr. Sharma, discussed diabetes medicine. He was happy and agreed for follow-up.
+
 📦 Output
 {
   "hcp_name": "Dr. Sharma",
@@ -128,29 +134,3 @@ Met Dr. Sharma, discussed diabetes medicine. He was happy and agreed for follow-
   "follow_up": "Next meeting",
   "sentiment": "Positive"
 }
-🎯 Key Highlights
-AI-first design approach
-Real-world CRM use case (Life Sciences)
-Combines structured + conversational UI
-LLM-powered data extraction
-Editable UI for user control
-Scalable architecture
-⚠️ Known Limitations
-Date/time may be approximated if not provided
-Requires internet for LLM API
-Database persistence optional (can be extended)
-🚀 Future Enhancements
-📊 Dashboard & Analytics
-📅 Follow-up Reminders
-💾 Database Integration
-🔔 Alerts for Negative Sentiment
-🎤 Voice Input Support
-👩‍💻 Author
-
-Vaishnavi Khedkar
-Full Stack Developer (Fresher)
-Project: AI-First CRM (HCP Module)
-
-📜 License
-
-This project is for educational and evaluation purposes.
